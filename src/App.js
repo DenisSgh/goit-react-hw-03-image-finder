@@ -54,10 +54,12 @@ class App extends Component {
   };
 
   smoothScroll = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
+    if (this.state.currentPage > 2) {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
   };
 
   modalOpen = largeImage => {
